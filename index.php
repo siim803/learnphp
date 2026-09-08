@@ -1,9 +1,11 @@
 <?php
-$test = 10;
-$test = 10 - 10;
-$test = 10 + 10;
-$test = 10 * 10;
-$test = $test + 10;
-$test = 2 ** 2;
-$test = 5 % 2;
- 
+$test = "yolo";
+$test = "yolo" . "life";
+$test = $test . "thug";
+$test .= "life";
+$name = "Kaspar";
+$age = 33;
+$test = $name . " is " . $age . " years old!";
+$test = "$name is $age years old!";
+$test = "don\"t";
+var_dump($test);
