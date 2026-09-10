@@ -1,42 +1,37 @@
 <?php
 
-for($i = 0; $i<10; $i++){
-    var_dump($i);
+function hello(): void {
+    var_dump("Hello");
 }
 
-for($i = 9; $i>0; $i--){
-    var_dump($i);
+hello();
+hello();
+hello();
+
+function helloname($name="nameless",$age="unknown") {
+    var_dump("Hello, $name! You are $age years old!");
 }
 
-for($i = 2; $i<1_000_000; $i*=2){
-    var_dump($i);
+helloname("Kaspar", 33);
+helloname("Martin", 67);
+helloname();
+
+function square(int $a): int {
+    if($a<0){
+        return 0;
+    }  
+        return $a * $a;
 }
 
-$time = time();
-$i = 0;
-while(time() < $time+1){
-    var_dump($i++);
+$answer = square(2);
+var_dump($answer);
+var_dump(square(4));
+
+function recursion($i)  {
+    if($i<10){
+        var_dump($i);
+        recursion(++$i);
+    }
 }
-
-while(false){
-    var_dump("While");
-}
-
-do{
-    var_dump("Do");
-} while(false);
-
-//Infinit loops
-//while(true){
-
-//}
-
-//for(;;){
-
-//}
-
-$fruits = ["Apple", "Banana", "Kiwi"];
-foreach($fruits as $fruits){
-    var_dump($fruits);
-}
+recursion(0);
 
