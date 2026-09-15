@@ -1,32 +1,62 @@
 <?php
 
 class Box {
-    public $width;
-    public $height;
-    public $length;
-    public $isOpen = false;
-    public $hasBeenOpened = false;
-};
+    use HasSmell;
+    public bool $isOpen = false;
+    private $hasBeenOpened = false;
 
-    public function __construct(public $width, public $height, public $length) {
+    public function __construct(private int $width, public $height, public $length) {
         var_dump('Object Created');
+    }
+
+    public function setWidth(int $width) {
+        if($width<0){
+            $this->width = 0;
+        }
+
+        $this->width = $width;
+    }
+    public function getWidth() {
+        return $this->width;
     }
 
     public function open(){
         $this->isOpen = true;
     }
 
-    public function _toString() {
-        return "I'm a box";
+    public function volume() {
+        return $this->width * $this->height * $this->length;
     }
 
-    public function __destruct() {
-        var_dump("Object destreoyed");
+    public function test1() {
+        var_dump($metal1->hasBeenOPened);
     }
+}
+class MetalBox extends box {
+    use HasColor, HasSmell;
+    public $weightPerUnit;
+    
+    public function mass() {
+        return $this->weightPerUnit * $this->volume();
+    }
+}
 
-};
-$box1 = new box(1 ,2 , 3);
-$box1 = 1;
-var_dump($box1);
-echo($box1);
-$box1
+trait HasColor {
+    public $color;
+    public function showColor() {
+        return $this->color;
+    }
+}
+
+trait HasSmell {
+    public $smell;
+    public function sniff() {
+        return $this->smell;
+    }
+}
+
+
+$metal1 = new MetalBox(1, 2, 3);
+$metal1->weightPerUnit = 1;
+var_dump($metal1->mass(), $metal1);
+var_dump($metal1->HasBeenOpened);
