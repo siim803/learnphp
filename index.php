@@ -6,31 +6,27 @@ class Box {
     public $length;
     public $isOpen = false;
     public $hasBeenOpened = false;
+};
+
+    public function __construct(public $width, public $height, public $length) {
+        var_dump('Object Created');
+    }
 
     public function open(){
         $this->isOpen = true;
     }
-}
 
-$num1 = 1;
-$num2 = &$num1;
-$num1 = 2;
-var_dump($num1, $num2);
+    public function _toString() {
+        return "I'm a box";
+    }
 
-$box1 = new Box();
-$box1->width = 1;
-$box2 = clone $box1;
-$box1->width = 2;
-var_dump($box1, $box2);
+    public function __destruct() {
+        var_dump("Object destreoyed");
+    }
 
-$numbers = [1,2,3,4,5];
-for ($i=0; $i < count($numbers); $i++) { 
-    $n = $numbers[$i];
-    $n+=1;
-}
-
-
-foreach($numbers as $n) {
-    $n+=1;
-}
-var_dump($numbers);
+};
+$box1 = new box(1 ,2 , 3);
+$box1 = 1;
+var_dump($box1);
+echo($box1);
+$box1
