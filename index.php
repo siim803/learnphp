@@ -1,62 +1,41 @@
 <?php
-
-class Box {
-    use HasSmell;
-    public bool $isOpen = false;
-    private $hasBeenOpened = false;
-
-    public function __construct(private int $width, public $height, public $length) {
-        var_dump('Object Created');
-    }
-
-    public function setWidth(int $width) {
-        if($width<0){
-            $this->width = 0;
+ 
+class task {
+    public function job(Logger $logger){
+        for($i = 0; $i<10; $i++){
+            echo "job $i was done!\n";
+            $logger ->log("Job $i was done!");
         }
-
-        $this->width = $width;
-    }
-    public function getWidth() {
-        return $this->width;
-    }
-
-    public function open(){
-        $this->isOpen = true;
-    }
-
-    public function volume() {
-        return $this->width * $this->height * $this->length;
-    }
-
-    public function test1() {
-        var_dump($metal1->hasBeenOPened);
     }
 }
-class MetalBox extends box {
-    use HasColor, HasSmell;
-    public $weightPerUnit;
-    
-    public function mass() {
-        return $this->weightPerUnit * $this->volume();
+ 
+ 
+class ConsoleLogger {
+    public function log($message){
+        echo "$message\n";
     }
 }
-
-trait HasColor {
-    public $color;
-    public function showColor() {
-        return $this->color;
+ 
+class NothingLogger implements Logger {
+    public function log($message){
+ 
     }
 }
-
-trait HasSmell {
-    public $smell;
-    public function sniff() {
-        return $this->smell;
+ 
+interface Logger {
+    public function log($message){
+ 
     }
 }
-
-
-$metal1 = new MetalBox(1, 2, 3);
-$metal1->weightPerUnit = 1;
-var_dump($metal1->mass(), $metal1);
-var_dump($metal1->HasBeenOpened);
+ 
+class FileLogger implements Logger{
+    public function log($message){
+        $file = fopen('log.txt', 'a');
+        fwrite($file, "$message\n");
+        fclose($file);
+    }
+}
+ 
+$logger = 'blaaa';
+$task = new Task();
+$task ->job();
