@@ -1,3 +1,38 @@
+<?php
+$title = 'us';
+
+$posts = [
+    [
+        'title' => 'some us title 1',
+        'date' => 'January 1, 2021',
+        'author' => 'pets',
+        'body' => 'ultra contetnt4'
+
+    ],
+    [
+        'title' => 'some us title 12',
+        'date' => 'January 1, 2021',
+        'author' => 'pets4',
+        'body' => 'ultra contetnt3'
+
+    ],
+    [
+        'title' => 'some us title 11',
+        'date' => 'January 1, 2021',
+        'author' => 'pets3',
+        'body' => 'ultra contetnt2'
+
+    ],
+    [
+        'title' => 'some us title 15',
+        'date' => 'January 1, 2021',
+        'author' => 'pets2',
+        'body' => 'ultra contetnt1'
+
+    ],
+];
+?>
+
 <?php include __DIR__ . '/partials/header.php'; ?>
 
   <main class="container"> 
