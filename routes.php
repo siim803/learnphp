@@ -9,7 +9,7 @@ Route::get('/', [PublicController::class, 'index']);
 
 Route::get('/us', [PublicController::class, 'us']);
 
-Route::get('/tech', [PublicController::class, 'tech']);
+Route::get('/techno', [PublicController::class, 'techno']);
 
 Route::get('/test', [PublicController::class, 'test']);
 
