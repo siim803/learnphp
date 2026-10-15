@@ -1,20 +1,18 @@
 <?php
-
 use App\Controllers\AuthController;
 use App\Controllers\PostsController;
-use App\Controllers\PublicController;
 use App\Route;
 
-Route::get('/', [PublicController::class, 'index']);
+Route::get('/', ['App\\Controllers\\PublicController', 'index']);
 
-Route::get('/us', [PublicController::class, 'us']);
+Route::get('/us', ['App\\Controllers\\PublicController', 'us']);
 
-Route::get('/techno', [PublicController::class, 'techno']);
+Route::get('/techno', ['App\\Controllers\\PublicController', 'techno']);
 
-Route::get('/test', [PublicController::class, 'test']);
+Route::get('/test', ['App\\Controllers\\PublicController', 'test']);
 
-Route::get('/form', [PublicController::class, 'form']);
-Route::post('/form', [PublicController::class, 'answer']);
+Route::get('/form', ['App\\Controllers\\PublicController', 'form']);
+Route::post('/form', ['App\\Controllers\\PublicController', 'answer']);
 
 Route::get('/admin/posts', [PostsController::class, 'index']);
 Route::get('/admin/posts/create', [PostsController::class, 'create']);
@@ -29,3 +27,4 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'loginForm']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
+
