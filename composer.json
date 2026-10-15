@@ -1,0 +1,13 @@
+{
+    "name": "siim.uutma/learnphp",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Siim803",
+            "email": "siim.uutma@techno.ee"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^8.1"
+    }
+}
