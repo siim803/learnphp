@@ -6,7 +6,7 @@ use App\DB;
 use App\Models\Post;
 use App\Models\User;
 
-class PublicControllerse
+class PublicController
 {
     public function index()
     {

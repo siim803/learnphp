@@ -9,5 +9,6 @@ services:
       - 33061:3306
     volumes:
       - ta24alearnphpdata:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 volumes:
   ta24alearnphpdata:
