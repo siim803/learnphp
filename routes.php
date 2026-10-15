@@ -1,6 +1,7 @@
 <?php
 use App\Controllers\AuthController;
 use App\Controllers\PostsController;
+use App\Controllers\UsersController;
 use App\Route;
 
 Route::get('/', ['App\\Controllers\\PublicController', 'index']);
@@ -28,3 +29,8 @@ Route::get('/login', [AuthController::class, 'loginForm']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
+Route::get('/admin/users', [UsersController::class, 'index']);
+Route::get('/admin/users/view', [UsersController::class, 'view']);
+Route::get('/admin/users/edit', [UsersController::class, 'edit']);
+Route::post('/admin/users/edit', [UsersController::class, 'update']);
+Route::get('/admin/users/delete', [UsersController::class, 'delete']);
