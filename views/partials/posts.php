@@ -7,8 +7,9 @@
               </p>
               <p>
                 <?=  $post->body ?>
+              </p>
+          </article>
         <?php endforeach ?>
-      </article>
       <nav class="blog-pagination" aria-label="Pagination">
           <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
           <a
