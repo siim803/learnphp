@@ -20,7 +20,7 @@ class PostsController
         $post = new Post();
         $post->title = $_POST['title'];
         $post->body = $_POST['body'];
-        $post->category = $_POST['category'];
+        $post->category = strtolower(trim($_POST['category']));
         $post->author = $_POST['author'];
         $post->save();
         redirect('/admin/posts');

@@ -11,7 +11,10 @@
         </div>
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
-            <input name="category" type="text" class="form-control" id="category" placeholder="Post category">
+            <select name="category" class="form-select" id="category" required>
+                <option value="world">World</option>
+                <option value="us">U.S.</option>
+            </select>
         </div>
         <div class="mb-3">
             <label for="author" class="form-label">Author</label>
