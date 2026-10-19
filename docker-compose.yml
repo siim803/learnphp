@@ -6,7 +6,7 @@ services:
       MARIADB_ROOT_PASSWORD: example
       MARIADB_DATABASE: learnphp
     ports:
-      - 33061:3306
+      - 33062:3306
     volumes:
       - ta24alearnphpdata:/var/lib/mysql
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro

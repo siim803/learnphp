@@ -12,7 +12,7 @@ class DB
     public function __construct()
     {
         $servername = "localhost";
-        $port = 33061;
+        $port = 33062;
         $username = "root";
         $password = "example";
         $dbname = "learnphp";
