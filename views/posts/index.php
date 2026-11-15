@@ -1,6 +1,13 @@
 <?php include __DIR__ . '/../partials/header.php'; ?>
 <main class="container">
-    <a href="/admin/posts/create" class="btn btn-primary">New Post</a>
+    <div class="flex items-center gap-2 mb-3">
+        <a href="/admin/posts/create" class="btn btn-primary">New Post</a>
+        <button
+            type="button"
+            class="rounded-md border border-transparent bg-[#0d6efd] px-3 py-1.5 text-base font-normal leading-normal text-white transition-colors hover:bg-[#0b5ed7] focus:outline-none focus:ring-4 focus:ring-[#86b7fe]/50 active:bg-[#0a58ca] disabled:cursor-not-allowed disabled:opacity-[0.65]">
+            Tailwind button
+        </button>
+    </div>
     <table class="table table-striped table-hover">
         <thead>
             <th>ID</th>
