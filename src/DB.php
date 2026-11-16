@@ -11,7 +11,7 @@ class DB
 
     public function __construct()
     {
-        $servername = "127.0.0.1";
+        $servername = "localhost";
         $port = 33062;
         $username = "root";
         $password = "example";
